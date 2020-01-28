@@ -3,13 +3,13 @@
 # Display Settings
 # ----------------
 debug = True        # Set to False for no data display
-window_on = False   # Set to True displays opencv windows (GUI desktop reqd)
+window_on = True   # Set to True displays opencv windows (GUI desktop reqd)
 show_fps = False    # Show Frames per second
 
 # OpenCV Settings
 # ---------------
-diff_window_on = False    # Show OpenCV image difference window
-thresh_window_on = False  # Show OpenCV image Threshold window
+diff_window_on = True    # Show OpenCV image difference window
+thresh_window_on = True  # Show OpenCV image Threshold window
 SHOW_CIRCLE = True  # True= show circle False= show rectancle on biggest motion
 CIRCLE_SIZE = 3     # diameter of circle for SHOW_CIRCLE
 LINE_THICKNESS = 2  # thickness of bounding line in pixels
@@ -19,7 +19,7 @@ WINDOW_BIGGER = 2   # Resize multiplier for Movement Status Window
 
 # Camera Settings
 # ---------------
-WEBCAM = False        # default = False False=PiCamera True=USB WebCamera
+WEBCAM = True        # default = False False=PiCamera True=USB WebCamera
 
 # Web Camera Settings
 WEBCAM_SRC = 0        # default = 0   USB opencv connection number
@@ -40,5 +40,5 @@ FRAME_COUNTER = 1000  # used when show_fps=True  Sets frequency of display
 # Motion Track Settings
 # ---------------------
 MIN_AREA = 200       # excludes all contours less than or equal to this Area
-THRESHOLD_SENSITIVITY = 25
+THRESHOLD_SENSITIVITY = 5
 BLUR_SIZE = 10

@@ -320,6 +320,15 @@ def track():
             threshold_image, contours, hierarchy = cv2.findContours(threshold_image,
                                                                     cv2.RETR_EXTERNAL,
                                                                     cv2.CHAIN_APPROX_SIMPLE)
+        # detect faces
+        # https://github.com/adarsh1021/facedetection/blob/master/haarcascade_frontalface_default.xml
+        face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+        faces = face_cascade.detectMultiScale(grayimage2, 1.1, 4)
+
+        logging.debug('faces: %s', faces)
+        for (x, y, w, h) in faces:
+            cv2.rectangle(image2, (x, y), (x+w, y+h), (255, 0, 0), 2)
+
         if contours:
             total_contours = len(contours)  # Get total number of contours
             for c in contours:              # find contour with biggest area
